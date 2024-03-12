@@ -1,0 +1,19 @@
+@-webkit-keyframes fade {
+    0%, 100% { opacity: 0 }
+    25%, 75% { opacity: 1 }
+}
+
+@-moz-keyframes fade {
+    0%, 100% { opacity: 0 }
+    25%, 75% { opacity: 1 }
+}
+
+@-o-keyframes fade {
+    0%, 100% { opacity: 0 }
+    25%, 75% { opacity: 1 }
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0 }
+    25%, 75% { opacity: 1 }
+}
