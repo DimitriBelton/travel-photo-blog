@@ -8,6 +8,14 @@
             animation: gradient 15s ease infinite;
             background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
+            margin: 0;
+            height: 100%;
+        }
+
+        .content-wrapper {
+            min-height: 100%;
+            position: relative;
+            padding-bottom: 50px; /* Höhe des Footers */
         }
 
         .slideshow-container {
@@ -74,6 +82,36 @@
             background-color: rgba(0,0,0,0.8);
         }
 
+        footer {
+            text-align: center;
+            padding: 4px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Erstellt 3 Spalten */
+            grid-template-rows: auto; /* Die Höhe der Zeilen wird automatisch an den Inhalt angepasst */
+            gap: 10px; /* Abstand zwischen den Grid-Elementen */
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
         @-webkit-keyframes fade {
             0%, 100% { opacity: 0 }
             25%, 75% { opacity: 1 }
@@ -108,22 +146,39 @@
     </style>
 </head>
 <body>
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="./assets/images/prague1.jpg" alt="Prague 1">
-            <div class="text-overlay"></div>
+    <div class="content-wrapper">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./assets/images/prague1.jpg" alt="Prague 1">
+                <div class="text-overlay">Prager Burg bei Nacht</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="./assets/images/prague2.jpg" alt="Prague 2">
+                <div class="text-overlay">Karlsbrücke im Morgengrauen</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="./assets/images/prague3.jpg" alt="Prague 3">
+                <div class="text-overlay">Altstädter Ring</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
         </div>
-        <div class="mySlides fade">
-            <img src="./assets/images/prague2.jpg" alt="Prague 2">
-            <div class="text-overlay"></div>
+
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <!-- Füge weitere Grid-Items hinzu, wenn nötig -->
         </div>
-        <div class="mySlides fade">
-            <img src="./assets/images/prague3.jpg" alt="Prague 3">
-            <div class="text-overlay"></div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">❮</a>
-        <a class="next" onclick="plusSlides(1)">❯</a>
     </div>
+
+    <footer>
+        <p>© 2024 Prag Diashow. Alle Rechte vorbehalten.</p>
+        <p>Kontaktiere uns: info@pragdiashow.com</p>
+    </footer>
 
     <script>
         let slideIndex = 0;
