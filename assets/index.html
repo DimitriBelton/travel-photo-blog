@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fahrkartenpreiskategorie</title>
+<style>
+/* index.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+input[type="number"] {
+  padding: 5px;
+  margin: 5px;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#ergebnis {
+  font-size: 20px;
+  margin-top: 10px;
+}
+</style>
+<script>
+function bewerteAlterUndZeigeFahrkartenpreiskategorie() {
+  var alter = document.getElementById('alter').value;
+  var kategorie = "";
+  if (alter < 6) {
+    kategorie = "Die Fahrt ist kostenlos";
+  } else if (alter >= 6 && alter <= 17) {
+    kategorie = "Kinderpreis";
+  } else if (alter >= 18 && alter <= 66) {
+    kategorie = "Vollpreis";
+  } else if (alter > 67) {
+    kategorie = "Seniorenpreis";
+  }
+  document.getElementById('ergebnis').textContent = kategorie;
+}
+</script>
+</head>
+<body>
+<p>Gib dein Alter ein: <input type="number" id="alter"></p>
+<button onclick="bewerteAlterUndZeigeFahrkartenpreiskategorie()">Preiskategorie anzeigen</button>
+<p id="ergebnis"></p>
+</body>
+</html>
